@@ -4,3 +4,5 @@ C:\Users\USRGAM\Documents\GitHub\segundo-bimestre-eguez-adrian\01-introduccion\I
 C:\Users\USRGAM\Documents\GitHub\segundo-bimestre-eguez-adrian\01-introduccion\IntroduccionArchivos\IntroduccionArchivos\obj\Debug\IntroduccionArchivos.csprojResolveAssemblyReference.cache
 C:\Users\USRGAM\Documents\GitHub\segundo-bimestre-eguez-adrian\01-introduccion\IntroduccionArchivos\IntroduccionArchivos\obj\Debug\IntroduccionArchivos.exe
 C:\Users\USRGAM\Documents\GitHub\segundo-bimestre-eguez-adrian\01-introduccion\IntroduccionArchivos\IntroduccionArchivos\obj\Debug\IntroduccionArchivos.pdb
+C:\Users\USRGAM\Documents\GitHub\segundo-bimestre-eguez-adrian\01-introduccion\IntroduccionArchivos\IntroduccionArchivos\obj\Debug\IntroduccionArchivos.MainForm.resources
+C:\Users\USRGAM\Documents\GitHub\segundo-bimestre-eguez-adrian\01-introduccion\IntroduccionArchivos\IntroduccionArchivos\obj\Debug\IntroduccionArchivos.csproj.GenerateResource.Cache

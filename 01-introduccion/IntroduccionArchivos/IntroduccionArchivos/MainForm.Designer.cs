@@ -36,12 +36,19 @@ namespace IntroduccionArchivos
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.SuspendLayout();
 			// 
 			// MainForm
 			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Text = "IntroduccionArchivos";
+			this.BackColor = System.Drawing.Color.Khaki;
+			this.ClientSize = new System.Drawing.Size(695, 466);
 			this.Name = "MainForm";
+			this.Text = "IntroduccionArchivos";
+			this.ResumeLayout(false);
+
+		}
 		}
 	}
 }
