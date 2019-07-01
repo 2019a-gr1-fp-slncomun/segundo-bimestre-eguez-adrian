@@ -14,6 +14,12 @@ namespace IntroduccionArchivos
 		/// Designer variable used to keep track of non-visual components.
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
+		private System.Windows.Forms.DataGridView dgvLogs;
+		private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
+		private System.Windows.Forms.DataGridViewTextBoxColumn log;
+		private System.Windows.Forms.Button btnAnadirLog;
+		private System.Windows.Forms.Button btnLeerDirectorio;
+		private System.Windows.Forms.TextBox txbLeerDirectorio;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -36,7 +42,66 @@ namespace IntroduccionArchivos
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.dgvLogs = new System.Windows.Forms.DataGridView();
+			this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.log = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.btnAnadirLog = new System.Windows.Forms.Button();
+			this.btnLeerDirectorio = new System.Windows.Forms.Button();
+			this.txbLeerDirectorio = new System.Windows.Forms.TextBox();
+			((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).BeginInit();
 			this.SuspendLayout();
+			// 
+			// dgvLogs
+			// 
+			this.dgvLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvLogs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.tipo,
+			this.log});
+			this.dgvLogs.Location = new System.Drawing.Point(12, 134);
+			this.dgvLogs.Name = "dgvLogs";
+			this.dgvLogs.RowTemplate.Height = 24;
+			this.dgvLogs.Size = new System.Drawing.Size(394, 150);
+			this.dgvLogs.TabIndex = 0;
+			this.dgvLogs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLogsCellDoubleClick);
+			// 
+			// tipo
+			// 
+			this.tipo.HeaderText = "Tipo Log";
+			this.tipo.Name = "tipo";
+			this.tipo.ReadOnly = true;
+			// 
+			// log
+			// 
+			this.log.HeaderText = "Descripcion";
+			this.log.Name = "log";
+			this.log.ReadOnly = true;
+			// 
+			// btnAnadirLog
+			// 
+			this.btnAnadirLog.Location = new System.Drawing.Point(12, 301);
+			this.btnAnadirLog.Name = "btnAnadirLog";
+			this.btnAnadirLog.Size = new System.Drawing.Size(187, 32);
+			this.btnAnadirLog.TabIndex = 1;
+			this.btnAnadirLog.Text = "Anadir log";
+			this.btnAnadirLog.UseVisualStyleBackColor = true;
+			this.btnAnadirLog.Click += new System.EventHandler(this.BtnAnadirLogClick);
+			// 
+			// btnLeerDirectorio
+			// 
+			this.btnLeerDirectorio.Location = new System.Drawing.Point(12, 78);
+			this.btnLeerDirectorio.Name = "btnLeerDirectorio";
+			this.btnLeerDirectorio.Size = new System.Drawing.Size(187, 32);
+			this.btnLeerDirectorio.TabIndex = 2;
+			this.btnLeerDirectorio.Text = "Leer Directorio";
+			this.btnLeerDirectorio.UseVisualStyleBackColor = true;
+			this.btnLeerDirectorio.Click += new System.EventHandler(this.BtnLeerDirectorioClick);
+			// 
+			// txbLeerDirectorio
+			// 
+			this.txbLeerDirectorio.Location = new System.Drawing.Point(12, 37);
+			this.txbLeerDirectorio.Name = "txbLeerDirectorio";
+			this.txbLeerDirectorio.Size = new System.Drawing.Size(187, 22);
+			this.txbLeerDirectorio.TabIndex = 3;
 			// 
 			// MainForm
 			// 
@@ -44,11 +109,17 @@ namespace IntroduccionArchivos
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Khaki;
 			this.ClientSize = new System.Drawing.Size(695, 466);
+			this.Controls.Add(this.txbLeerDirectorio);
+			this.Controls.Add(this.btnLeerDirectorio);
+			this.Controls.Add(this.btnAnadirLog);
+			this.Controls.Add(this.dgvLogs);
 			this.Name = "MainForm";
 			this.Text = "IntroduccionArchivos";
+			((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 		}
 	}
-}
+
