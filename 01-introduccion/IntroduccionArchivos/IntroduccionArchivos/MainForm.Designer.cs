@@ -22,6 +22,10 @@ namespace IntroduccionArchivos
 		private System.Windows.Forms.TextBox txbLeerDirectorio;
 		private System.Windows.Forms.Button btnListarDirectorio;
 		private System.Windows.Forms.TextBox txbListarDirectorio;
+		private System.Windows.Forms.TextBox txbCrearArchivo;
+		private System.Windows.Forms.Button btnCrearArchivo;
+		private System.Windows.Forms.TextBox txbCrearDirectorio;
+		private System.Windows.Forms.Button btnCrearDirectorio;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -52,6 +56,10 @@ namespace IntroduccionArchivos
 			this.txbLeerDirectorio = new System.Windows.Forms.TextBox();
 			this.btnListarDirectorio = new System.Windows.Forms.Button();
 			this.txbListarDirectorio = new System.Windows.Forms.TextBox();
+			this.txbCrearArchivo = new System.Windows.Forms.TextBox();
+			this.btnCrearArchivo = new System.Windows.Forms.Button();
+			this.txbCrearDirectorio = new System.Windows.Forms.TextBox();
+			this.btnCrearDirectorio = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -130,12 +138,50 @@ namespace IntroduccionArchivos
 			this.txbListarDirectorio.Size = new System.Drawing.Size(126, 22);
 			this.txbListarDirectorio.TabIndex = 5;
 			// 
+			// txbCrearArchivo
+			// 
+			this.txbCrearArchivo.Location = new System.Drawing.Point(313, 37);
+			this.txbCrearArchivo.Name = "txbCrearArchivo";
+			this.txbCrearArchivo.Size = new System.Drawing.Size(126, 22);
+			this.txbCrearArchivo.TabIndex = 6;
+			// 
+			// btnCrearArchivo
+			// 
+			this.btnCrearArchivo.Location = new System.Drawing.Point(313, 78);
+			this.btnCrearArchivo.Name = "btnCrearArchivo";
+			this.btnCrearArchivo.Size = new System.Drawing.Size(126, 32);
+			this.btnCrearArchivo.TabIndex = 7;
+			this.btnCrearArchivo.Text = "Crear Archivo";
+			this.btnCrearArchivo.UseVisualStyleBackColor = true;
+			this.btnCrearArchivo.Click += new System.EventHandler(this.BtnCrearArchivoClick);
+			// 
+			// txbCrearDirectorio
+			// 
+			this.txbCrearDirectorio.Location = new System.Drawing.Point(456, 37);
+			this.txbCrearDirectorio.Name = "txbCrearDirectorio";
+			this.txbCrearDirectorio.Size = new System.Drawing.Size(126, 22);
+			this.txbCrearDirectorio.TabIndex = 8;
+			// 
+			// btnCrearDirectorio
+			// 
+			this.btnCrearDirectorio.Location = new System.Drawing.Point(456, 78);
+			this.btnCrearDirectorio.Name = "btnCrearDirectorio";
+			this.btnCrearDirectorio.Size = new System.Drawing.Size(126, 32);
+			this.btnCrearDirectorio.TabIndex = 9;
+			this.btnCrearDirectorio.Text = "Crear Directorio";
+			this.btnCrearDirectorio.UseVisualStyleBackColor = true;
+			this.btnCrearDirectorio.Click += new System.EventHandler(this.BtnCrearDirectorioClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Khaki;
 			this.ClientSize = new System.Drawing.Size(695, 485);
+			this.Controls.Add(this.btnCrearDirectorio);
+			this.Controls.Add(this.txbCrearDirectorio);
+			this.Controls.Add(this.btnCrearArchivo);
+			this.Controls.Add(this.txbCrearArchivo);
 			this.Controls.Add(this.txbListarDirectorio);
 			this.Controls.Add(this.btnListarDirectorio);
 			this.Controls.Add(this.txbLeerDirectorio);
