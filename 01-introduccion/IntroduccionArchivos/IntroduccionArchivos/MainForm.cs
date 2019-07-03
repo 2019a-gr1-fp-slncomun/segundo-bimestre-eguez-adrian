@@ -258,7 +258,10 @@ namespace IntroduccionArchivos
 				string pathInicio = txbIniciaCopia.Text;
 				string pathFin = txbFinalizaCopia.Text;
 				
-				bool existeDirectorioInicio = Directory.Exists(@pathInicio);   
+				char[] cadenaInicio = pathInicio.ToCharArray();
+				
+				
+				bool existeDirectorioInicio = Directory.Exists(@pathInicio);
 				
 				if(existeDirectorioInicio == true)
 				{
@@ -266,7 +269,17 @@ namespace IntroduccionArchivos
 					
 					foreach(string directorio in directoriosInicio)
 					{
-						EscribirLog("info",directorio,dgvLogs);
+						
+						
+						int inicioSubstring = pathInicio.Length;
+						int finSubstring = directorio.Length;
+						
+				        string nombreDirectorio = directorio.Substring(inicioSubstring,finSubstring);
+				        
+						EscribirLog("info", nombreDirectorio, dgvLogs);
+						
+					    //char a = cadenaInicio[1];
+						
 					}
 					
 					
