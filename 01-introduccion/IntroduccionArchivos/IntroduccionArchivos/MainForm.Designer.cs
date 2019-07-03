@@ -26,6 +26,9 @@ namespace IntroduccionArchivos
 		private System.Windows.Forms.Button btnCrearArchivo;
 		private System.Windows.Forms.TextBox txbCrearDirectorio;
 		private System.Windows.Forms.Button btnCrearDirectorio;
+		private System.Windows.Forms.TextBox txbIniciaCopia;
+		private System.Windows.Forms.TextBox txbFinalizaCopia;
+		private System.Windows.Forms.Button btnCopiarDirectorio;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -60,6 +63,9 @@ namespace IntroduccionArchivos
 			this.btnCrearArchivo = new System.Windows.Forms.Button();
 			this.txbCrearDirectorio = new System.Windows.Forms.TextBox();
 			this.btnCrearDirectorio = new System.Windows.Forms.Button();
+			this.txbIniciaCopia = new System.Windows.Forms.TextBox();
+			this.txbFinalizaCopia = new System.Windows.Forms.TextBox();
+			this.btnCopiarDirectorio = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -76,7 +82,7 @@ namespace IntroduccionArchivos
 			this.dgvLogs.Name = "dgvLogs";
 			this.dgvLogs.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.dgvLogs.RowTemplate.Height = 24;
-			this.dgvLogs.Size = new System.Drawing.Size(671, 291);
+			this.dgvLogs.Size = new System.Drawing.Size(961, 291);
 			this.dgvLogs.TabIndex = 0;
 			this.dgvLogs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLogsCellDoubleClick);
 			// 
@@ -172,12 +178,39 @@ namespace IntroduccionArchivos
 			this.btnCrearDirectorio.UseVisualStyleBackColor = true;
 			this.btnCrearDirectorio.Click += new System.EventHandler(this.BtnCrearDirectorioClick);
 			// 
+			// txbIniciaCopia
+			// 
+			this.txbIniciaCopia.Location = new System.Drawing.Point(605, 37);
+			this.txbIniciaCopia.Name = "txbIniciaCopia";
+			this.txbIniciaCopia.Size = new System.Drawing.Size(126, 22);
+			this.txbIniciaCopia.TabIndex = 10;
+			// 
+			// txbFinalizaCopia
+			// 
+			this.txbFinalizaCopia.Location = new System.Drawing.Point(748, 37);
+			this.txbFinalizaCopia.Name = "txbFinalizaCopia";
+			this.txbFinalizaCopia.Size = new System.Drawing.Size(126, 22);
+			this.txbFinalizaCopia.TabIndex = 11;
+			// 
+			// btnCopiarDirectorio
+			// 
+			this.btnCopiarDirectorio.Location = new System.Drawing.Point(605, 78);
+			this.btnCopiarDirectorio.Name = "btnCopiarDirectorio";
+			this.btnCopiarDirectorio.Size = new System.Drawing.Size(269, 32);
+			this.btnCopiarDirectorio.TabIndex = 12;
+			this.btnCopiarDirectorio.Text = "Copiar Directorio";
+			this.btnCopiarDirectorio.UseVisualStyleBackColor = true;
+			this.btnCopiarDirectorio.Click += new System.EventHandler(this.BtnCopiarDirectorioClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Khaki;
-			this.ClientSize = new System.Drawing.Size(695, 485);
+			this.ClientSize = new System.Drawing.Size(985, 485);
+			this.Controls.Add(this.btnCopiarDirectorio);
+			this.Controls.Add(this.txbFinalizaCopia);
+			this.Controls.Add(this.txbIniciaCopia);
 			this.Controls.Add(this.btnCrearDirectorio);
 			this.Controls.Add(this.txbCrearDirectorio);
 			this.Controls.Add(this.btnCrearArchivo);

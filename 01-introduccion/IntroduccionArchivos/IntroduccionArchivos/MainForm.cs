@@ -43,7 +43,7 @@ namespace IntroduccionArchivos
 		                            DataGridViewCellEventArgs e)
 		{
 			
-			string a =""; // Primitivo 
+			// string a =""; // Primitivo 
 			
 			    
 			// Sintaxis
@@ -196,6 +196,8 @@ namespace IntroduccionArchivos
 			{
 				string path = txbCrearArchivo.Text;
 				
+				
+				
 				StreamWriter escritura =  File.CreateText(@path);
 				
 				escritura.WriteLine("Hola archivo");
@@ -205,9 +207,9 @@ namespace IntroduccionArchivos
 				
 				// Siempre cerrar el archivo despues de usarlo
 				
-				// escritura.Close();
+				escritura.Close();
 				
-				/*
+				
 				
 				using(StreamWriter escrituraDos =  File.CreateText(@path))             
 				{
@@ -215,7 +217,7 @@ namespace IntroduccionArchivos
 					escrituraDos.WriteLine("Segunda linea");
 					escrituraDos.WriteLine("Tercera linea");
 				}
-				*/
+				
 				
 				
 				
@@ -249,6 +251,37 @@ namespace IntroduccionArchivos
 				EscribirLog("error", error.ToString(), dgvLogs);
 			}
 			
+		}
+		void BtnCopiarDirectorioClick(object sender, EventArgs e)
+		{
+			try {
+				string pathInicio = txbIniciaCopia.Text;
+				string pathFin = txbFinalizaCopia.Text;
+				
+				bool existeDirectorioInicio = Directory.Exists(@pathInicio);   
+				
+				if(existeDirectorioInicio == true)
+				{
+					string[] directoriosInicio =  Directory.GetDirectories(@pathInicio);
+					
+					foreach(string directorio in directoriosInicio)
+					{
+						EscribirLog("info",directorio,dgvLogs);
+					}
+					
+					
+				}
+				else
+				{
+					EscribirLog("error","No existe directorio.",dgvLogs);
+				}
+				
+				
+				
+				
+			} catch (Exception error) {
+				EscribirLog("error", error.ToString(), dgvLogs);
+			}
 		}
 	}
 }
