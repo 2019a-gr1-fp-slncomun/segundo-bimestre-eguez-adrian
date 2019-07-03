@@ -204,7 +204,25 @@ namespace IntroduccionArchivos
 				
 				
 				// Siempre cerrar el archivo despues de usarlo
-				escritura.Close();
+				
+				// escritura.Close();
+				
+				/*
+				
+				using(StreamWriter escrituraDos =  File.CreateText(@path))             
+				{
+					escrituraDos.WriteLine("Hola archivo");
+					escrituraDos.WriteLine("Segunda linea");
+					escrituraDos.WriteLine("Tercera linea");
+				}
+				*/
+				
+				
+				
+				
+				
+				
+				
 				
 				EscribirLog("info","Escritura Archivo: se escribio el archivo",dgvLogs);
 				
