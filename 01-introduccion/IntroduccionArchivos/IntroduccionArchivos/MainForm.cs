@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using System.Text;
 
 namespace IntroduccionArchivos
 {
@@ -200,6 +201,12 @@ namespace IntroduccionArchivos
 				
 				StreamWriter escritura =  File.CreateText(@path);
 				
+				FileStream lectura = File.OpenRead(@path);
+				
+				StreamReader lecturaArchivo = File.OpenText(@path);         
+				
+				string textoLeido = File.ReadAllText(@path);
+				
 				escritura.WriteLine("Hola archivo");
 				escritura.WriteLine("Segunda linea");
 				escritura.WriteLine("Tercera linea");
@@ -267,6 +274,11 @@ namespace IntroduccionArchivos
 				{
 					string[] directoriosInicio =  Directory.GetDirectories(@pathInicio);
 					
+					// ARCHIVOS 
+					string[] archivosEncontrados = Directory.GetFiles(@pathInicio);
+					
+					// File.Copy()
+					
 					foreach(string directorio in directoriosInicio)
 					{
 						
@@ -295,6 +307,102 @@ namespace IntroduccionArchivos
 			} catch (Exception error) {
 				EscribirLog("error", error.ToString(), dgvLogs);
 			}
+		}
+		void BtnStreamWClick(object sender, EventArgs e)
+		{
+			string path = txbStreamW.Text;
+            Stream writingStream = new FileStream(@path,FileMode.Create);  //
+				
+			try{
+				
+				
+				
+				if(writingStream.CanWrite){
+					byte[] miNombreEnBytes = new byte[] {
+						65, //A
+						100, //d
+						100, //d
+						100, //d
+						100, //d
+						100, //d
+						100, //d
+						100, //d
+						100, //d
+						100, //d
+						100, //d
+						100, //d
+					};
+					
+					writingStream.Write(
+						miNombreEnBytes,
+						0,
+						miNombreEnBytes.Length
+					);
+					writingStream.WriteByte(33); // !
+					
+					EscribirLog("info","Escribimos archivo", dgvLogs);
+					
+					
+					
+				}else{
+					EscribirLog("error", "No se puede escribir.", dgvLogs);
+				}
+				
+				
+				
+				
+				
+				
+			} catch(Exception error){
+				
+				EscribirLog("error", error.ToString(), dgvLogs);
+				
+			}
+			finally{
+				writingStream.Close();
+			}
+			
+		}
+		void BtnStreamRClick(object sender, EventArgs e)
+		{
+			string path = txbStreamW.Text;
+			try{
+				
+				using(Stream readingStream = new FileStream(@path, FileMode.Open)){       
+					byte[] arregloTemporal = new byte[3];
+					UTF8Encoding codificacion = new UTF8Encoding(true);
+					
+					// readingStream.Seek  -> Moverse de posiciones
+					
+					
+					int posicion = 0;
+					
+					while( (posicion = readingStream.Read(
+						arregloTemporal, 
+						0, 
+						arregloTemporal.Length
+					)) > 0){
+					
+						String caracter = codificacion.GetString(
+							arregloTemporal,
+							0,
+							arregloTemporal.Length
+						);
+						
+						EscribirLog("info","Caracter: " + caracter, dgvLogs);
+						
+					}
+					
+					
+					
+					
+				}
+				
+			}
+			catch(Exception error) { 
+				EscribirLog("error", error.ToString(), dgvLogs);
+			}
+			
 		}
 	}
 }

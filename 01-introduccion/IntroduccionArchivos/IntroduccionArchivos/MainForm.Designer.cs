@@ -29,6 +29,9 @@ namespace IntroduccionArchivos
 		private System.Windows.Forms.TextBox txbIniciaCopia;
 		private System.Windows.Forms.TextBox txbFinalizaCopia;
 		private System.Windows.Forms.Button btnCopiarDirectorio;
+		private System.Windows.Forms.TextBox txbStreamW;
+		private System.Windows.Forms.Button btnStreamW;
+		private System.Windows.Forms.Button btnStreamR;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -66,6 +69,9 @@ namespace IntroduccionArchivos
 			this.txbIniciaCopia = new System.Windows.Forms.TextBox();
 			this.txbFinalizaCopia = new System.Windows.Forms.TextBox();
 			this.btnCopiarDirectorio = new System.Windows.Forms.Button();
+			this.txbStreamW = new System.Windows.Forms.TextBox();
+			this.btnStreamW = new System.Windows.Forms.Button();
+			this.btnStreamR = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -82,7 +88,7 @@ namespace IntroduccionArchivos
 			this.dgvLogs.Name = "dgvLogs";
 			this.dgvLogs.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.dgvLogs.RowTemplate.Height = 24;
-			this.dgvLogs.Size = new System.Drawing.Size(961, 291);
+			this.dgvLogs.Size = new System.Drawing.Size(1048, 291);
 			this.dgvLogs.TabIndex = 0;
 			this.dgvLogs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLogsCellDoubleClick);
 			// 
@@ -202,12 +208,42 @@ namespace IntroduccionArchivos
 			this.btnCopiarDirectorio.UseVisualStyleBackColor = true;
 			this.btnCopiarDirectorio.Click += new System.EventHandler(this.BtnCopiarDirectorioClick);
 			// 
+			// txbStreamW
+			// 
+			this.txbStreamW.Location = new System.Drawing.Point(880, 12);
+			this.txbStreamW.Name = "txbStreamW";
+			this.txbStreamW.Size = new System.Drawing.Size(126, 22);
+			this.txbStreamW.TabIndex = 13;
+			// 
+			// btnStreamW
+			// 
+			this.btnStreamW.Location = new System.Drawing.Point(880, 40);
+			this.btnStreamW.Name = "btnStreamW";
+			this.btnStreamW.Size = new System.Drawing.Size(126, 32);
+			this.btnStreamW.TabIndex = 14;
+			this.btnStreamW.Text = "Stream W";
+			this.btnStreamW.UseVisualStyleBackColor = true;
+			this.btnStreamW.Click += new System.EventHandler(this.BtnStreamWClick);
+			// 
+			// btnStreamR
+			// 
+			this.btnStreamR.Location = new System.Drawing.Point(880, 78);
+			this.btnStreamR.Name = "btnStreamR";
+			this.btnStreamR.Size = new System.Drawing.Size(126, 32);
+			this.btnStreamR.TabIndex = 15;
+			this.btnStreamR.Text = "Stream R";
+			this.btnStreamR.UseVisualStyleBackColor = true;
+			this.btnStreamR.Click += new System.EventHandler(this.BtnStreamRClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Khaki;
-			this.ClientSize = new System.Drawing.Size(985, 485);
+			this.ClientSize = new System.Drawing.Size(1072, 485);
+			this.Controls.Add(this.btnStreamR);
+			this.Controls.Add(this.btnStreamW);
+			this.Controls.Add(this.txbStreamW);
 			this.Controls.Add(this.btnCopiarDirectorio);
 			this.Controls.Add(this.txbFinalizaCopia);
 			this.Controls.Add(this.txbIniciaCopia);
