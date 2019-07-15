@@ -32,6 +32,8 @@ namespace IntroduccionArchivos
 		private System.Windows.Forms.TextBox txbStreamW;
 		private System.Windows.Forms.Button btnStreamW;
 		private System.Windows.Forms.Button btnStreamR;
+		private System.Windows.Forms.TextBox txbArreglo;
+		private System.Windows.Forms.Button btnOrdenarArregloBs;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -72,6 +74,8 @@ namespace IntroduccionArchivos
 			this.txbStreamW = new System.Windows.Forms.TextBox();
 			this.btnStreamW = new System.Windows.Forms.Button();
 			this.btnStreamR = new System.Windows.Forms.Button();
+			this.txbArreglo = new System.Windows.Forms.TextBox();
+			this.btnOrdenarArregloBs = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -88,7 +92,7 @@ namespace IntroduccionArchivos
 			this.dgvLogs.Name = "dgvLogs";
 			this.dgvLogs.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.dgvLogs.RowTemplate.Height = 24;
-			this.dgvLogs.Size = new System.Drawing.Size(1048, 291);
+			this.dgvLogs.Size = new System.Drawing.Size(1048, 231);
 			this.dgvLogs.TabIndex = 0;
 			this.dgvLogs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLogsCellDoubleClick);
 			// 
@@ -235,12 +239,31 @@ namespace IntroduccionArchivos
 			this.btnStreamR.UseVisualStyleBackColor = true;
 			this.btnStreamR.Click += new System.EventHandler(this.BtnStreamRClick);
 			// 
+			// txbArreglo
+			// 
+			this.txbArreglo.Location = new System.Drawing.Point(226, 398);
+			this.txbArreglo.Name = "txbArreglo";
+			this.txbArreglo.Size = new System.Drawing.Size(237, 22);
+			this.txbArreglo.TabIndex = 16;
+			// 
+			// btnOrdenarArregloBs
+			// 
+			this.btnOrdenarArregloBs.Location = new System.Drawing.Point(226, 441);
+			this.btnOrdenarArregloBs.Name = "btnOrdenarArregloBs";
+			this.btnOrdenarArregloBs.Size = new System.Drawing.Size(126, 32);
+			this.btnOrdenarArregloBs.TabIndex = 17;
+			this.btnOrdenarArregloBs.Text = "Ordenar Arreglo Bs";
+			this.btnOrdenarArregloBs.UseVisualStyleBackColor = true;
+			this.btnOrdenarArregloBs.Click += new System.EventHandler(this.BtnOrdenarArregloBsClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Khaki;
 			this.ClientSize = new System.Drawing.Size(1072, 485);
+			this.Controls.Add(this.btnOrdenarArregloBs);
+			this.Controls.Add(this.txbArreglo);
 			this.Controls.Add(this.btnStreamR);
 			this.Controls.Add(this.btnStreamW);
 			this.Controls.Add(this.txbStreamW);

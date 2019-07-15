@@ -404,6 +404,53 @@ namespace IntroduccionArchivos
 			}
 			
 		}
+		void BtnOrdenarArregloBsClick(object sender, EventArgs e)
+		{
+			string arregloTexto = txbArreglo.Text;
+			
+			string[] elementosString = arregloTexto.Split(',');
+			
+			int longitudArreglo = elementosString.Length;
+			
+			int[] elementos = new int[longitudArreglo];
+			
+			int contador = 0;
+			
+			foreach(string elementoString in elementosString){
+				
+				elementos[contador] = Int32.Parse(elementoString);
+				
+				EscribirLog("info", elementos[contador].ToString(), dgvLogs);     
+				
+				contador++;
+			}
+			
+			for(int iPrimerelemento = 0; 
+			    iPrimerelemento < longitudArreglo; 
+			    iPrimerelemento++){
+				
+				for(int iSegundolemento = 0; 
+			    iSegundolemento < longitudArreglo; 
+			    iSegundolemento++){
+					
+					int primerNumero = elementos[iPrimerelemento];
+					int segundoNumero = elementos[iSegundolemento];
+					
+					if(segundoNumero < primerNumero){
+						int valorTemporal = primerNumero;
+						elementos[iPrimerelemento] = elementos[iSegundolemento];
+						elementos[iSegundolemento] = primerNumero;
+						
+					}
+
+				}
+			
+				
+			}
+			
+			
+			
+		}
 	}
 }
 
